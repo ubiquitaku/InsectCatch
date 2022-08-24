@@ -1,0 +1,6 @@
+name: InsectCatch
+version: '${project.version}'
+main: unknown.insectcatch.InsectCatch
+api-version: 1.17
+commands:
+  icatch:

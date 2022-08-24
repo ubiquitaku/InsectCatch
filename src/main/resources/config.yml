@@ -1,0 +1,67 @@
+item:
+  name: 虫取り網
+  lore: 網。
+  mat: DIAMOND
+woods:
+  ACACIA_LOG:
+    ここの名前は他の木とも被らないように:
+      per: 10
+      ins:
+        name: アカシアの虫
+        lore: アカシアについてる虫。
+        mat: STONE
+    アカシア1(レア):
+      per: 1
+      ins:
+        name: アカシアのむし
+        lore: アカシアについてるちょっとレアな虫。
+        mat: STONE
+  BIRCH_LOG:
+    白樺1:
+      per: 10
+      ins:
+        name: 白樺の虫
+        lore: 白樺についてる虫。
+        mat: STONE
+  OAK_LOG:
+    オーク1:
+      per: 10
+      ins:
+        name: オークの虫
+        lore: オークについてる虫。
+        mat: STONE
+  DARK_OAK_LOG:
+    ダークオーク1:
+      per: 10
+      ins:
+        name: ダークオークの虫
+        lore: ダークオークについてる虫。
+        mat: STONE
+  JUNGLE_LOG:
+    ジャングル1:
+      per: 10
+      ins:
+        name: ジャングルの虫
+        lore: ジャングルの木についてる虫。
+        mat: STONE
+  SPRUCE_LOG:
+    トウヒ1:
+      per: 10
+      ins:
+        name: トウヒの虫
+        lore: トウヒについてる虫。
+        mat: STONE
+  CRIMSON_STEM:
+    真紅1:
+      per: 10
+      ins:
+        name: 真紅の虫
+        lore: 真紅についてる虫。/名前は真紅だが実際は…
+        mat: STONE
+  WARPED_STEM:
+    歪1:
+      per: 10
+      ins:
+        name: 歪んだ虫
+        lore: 歪んだ木についてる虫。/実際に歪んでいるが名前の元は木の名前。
+        mat: STONE
