@@ -94,10 +94,12 @@ public final class InsectCatch extends JavaPlugin implements @NotNull Listener {
             return;
         }
         if (!woods.containsKey(e.getClickedBlock().getType().name())) {
-            Bukkit.broadcast(Component.text("tigau"));
             return;
         }
+        ItemStack item = e.getPlayer().getInventory().getItemInMainHand();
+        item.setAmount(item.getAmount()-1);
         Map<String,Integer> map = woods.get(e.getClickedBlock().getType().name());
+        System.out.println(map.toString());
         for (String str : map.keySet()) {
             if (r.nextInt(100000) < map.get(str)) {
                 e.getPlayer().getInventory().addItem(insects.get(str));
@@ -111,6 +113,7 @@ public final class InsectCatch extends JavaPlugin implements @NotNull Listener {
     //木のマテリアルの一覧を作る
     void addWoods() {
         woods.put("ACACIA_LOG",acacia);
+        System.out.println(acacia.toString());
         woods.put("BIRCH_LOG",birch);
         woods.put("OAK_LOG",oak);
         woods.put("DARK_OAK_LOG",dark_oak);
@@ -137,7 +140,7 @@ public final class InsectCatch extends JavaPlugin implements @NotNull Listener {
         Map<String,Integer> map = new HashMap<>();
         @Nullable ConfigurationSection con = config.getConfigurationSection("woods."+name);
         for (String st : con.getKeys(false)) {
-            map.put(st, (int) (con.getDouble("per")*1000));
+            map.put(st, (int) (con.getDouble(st+".per")*1000));
             ItemStack item = new ItemStack(Material.getMaterial(con.getString(st+".ins.mat")));
             ItemMeta meta = item.getItemMeta();
             meta.displayName(Component.text(con.getString(st+".ins.name")));
