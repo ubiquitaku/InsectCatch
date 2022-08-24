@@ -90,17 +90,13 @@ public final class InsectCatch extends JavaPlugin implements @NotNull Listener {
         if (e.getAction() != Action.RIGHT_CLICK_BLOCK) {
             return;
         }
-        //ここが変
-        if (e.getPlayer().getInventory().getItemInMainHand().getItemMeta().displayName() != netmeta.displayName() /*&& e.getPlayer().getInventory().getItemInMainHand().getItemMeta().lore() == net.getItemMeta().lore()*/) {
-            System.out.println(e.getPlayer().getInventory().getItemInMainHand().getItemMeta());
-            System.out.println(net.getItemMeta());
+        if (!e.getPlayer().getInventory().getItemInMainHand().getItemMeta().displayName().equals(netmeta.displayName())) {
             return;
         }
-        System.out.println("we");
-        if (!woods.containsKey(e.getMaterial().name())) {
+        if (!woods.containsKey(e.getClickedBlock().getType().name())) {
+            Bukkit.broadcast(Component.text("tigau"));
             return;
         }
-        System.out.println("ee");
         Map<String,Integer> map = woods.get(e.getClickedBlock().getType().name());
         for (String str : map.keySet()) {
             if (r.nextInt(100000) < map.get(str)) {
@@ -109,6 +105,7 @@ public final class InsectCatch extends JavaPlugin implements @NotNull Listener {
                 break;
             }
         }
+        Bukkit.broadcast(Component.text("musinasi"));
     }
 
     //木のマテリアルの一覧を作る
