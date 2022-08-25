@@ -107,7 +107,6 @@ public final class InsectCatch extends JavaPlugin implements @NotNull Listener {
                 break;
             }
         }
-        Bukkit.broadcast(Component.text("musinasi"));
     }
 
     //木のマテリアルの一覧を作る
